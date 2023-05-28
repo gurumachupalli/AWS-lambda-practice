@@ -6,7 +6,7 @@ data "archive_file" "lambda" {
 
 resource "aws_lambda_function" "lambda_practice" {
   filename      = "lambda_function_payload.zip"
-  function_name = "lambda_practice"
+  function_name = var.lambda_name
   role          = aws_iam_role.iam_for_lambda.arn
   handler       = "lambda.lambda_handler"
 
